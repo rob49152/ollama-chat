@@ -6,14 +6,14 @@ A web application that allows users to chat with Ollama's LLM models through a u
 
 - Real-time chat with Ollama models through a web interface
 - Intelligent hashtag generation based on conversation content (with enhanced entity extraction)
-- MySQL database for persistent storage of conversations
+- MySQL database for persistent storage of conversations (developed on MariaDB)
 - Configuration management for model selection and parameters
 - Debugging utilities for troubleshooting
 
 ## Prerequisites
 
 - Node.js 14+ and npm
-- MySQL database
+- MySQL database (or MariaDB)
 - Ollama installed and running (https://localhost:11434)
 
 ## Installation
