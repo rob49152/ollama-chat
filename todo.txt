@@ -1,0 +1,5 @@
+in the database each incoming user message and outgoing ollama reply should have a unique value recorded along with a timestamp. There should be a new table that records each unique value in order of creation.
+
+- Create a summary document covering, The overall architecture, How the components interact, The database schema, The hashtag generation and reuse logic, Configuration options and environment variables
+
+- switch tags to use 'use-bootstrap-tag' node.js module

@@ -1,0 +1,385 @@
+.chat-container {
+  height: 400px;
+  overflow-y: auto;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: #f9f9f9;
+}
+
+.message {
+  margin-bottom: 10px;
+  padding: 8px 12px;
+  border-radius: 5px;
+  max-width: 80%;
+  word-wrap: break-word;
+}
+
+.user-message {
+  background-color: #d1ecf1;
+  margin-left: auto;
+  text-align: right;
+}
+
+.assistant-message {
+  background-color: #e2e3e5;
+}
+
+.system-message {
+  background-color: #fff3cd;
+  font-style: italic;
+  max-width: 100%;
+  text-align: center;
+  margin: 10px auto;
+}
+
+.typing-indicator {
+  font-style: italic;
+  color: #6c757d;
+}
+
+#model-badge {
+  font-size: 0.9rem;
+}
+
+.modal-body .alert {
+  font-size: 0.9rem;
+  padding: 0.5rem 1rem;
+  margin-top: 0.5rem;
+}
+
+/* Hashtags styling */
+.hashtags-container {
+  min-height: 40px;
+  padding: 5px 0;
+  margin-top: 10px !important;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.hashtag-label {
+  color: #6c757d;
+  font-size: 0.85rem;
+  margin-right: 8px;
+  font-weight: 500;
+}
+
+.hashtag:hover {
+  background-color: #6c757d;
+  color: white;
+  cursor: pointer;
+  transform: translateY(-1px);
+}
+
+/* Add these styles to your styles.css file */
+
+/* Chatbot indicator styling */
+#chatbot-indicator {
+  cursor: pointer;
+  background-color: #e9ecef;
+  transition: background-color 0.2s;
+}
+
+#chatbot-indicator:hover {
+  background-color: #dee2e6;
+}
+
+/* Chatbot card styling */
+.card.border-primary {
+  box-shadow: 0 0 0 0.2rem rgba(13,110,253,.25);
+}
+
+.chatbot-preview {
+  font-size: 0.9rem;
+  color: #6c757d;
+  min-height: 50px;
+}
+
+/* Form styling */
+.tab-content {
+  min-height: 400px;
+}
+
+#chatbot-form textarea {
+  font-size: 0.9rem;
+}
+
+.example-pair {
+  border-left: 3px solid #f0f0f0;
+  padding-left: 10px;
+  transition: border-color 0.3s;
+}
+
+.example-pair:hover {
+  border-left-color: #0d6efd;
+}
+
+/* Animation for the active chatbot */
+@keyframes pulse-border {
+  0% {
+    box-shadow: 0 0 0 0 rgba(13,110,253,.4);
+  }
+  70% {
+    box-shadow: 0 0 0 6px rgba(13,110,253,0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(13,110,253,0);
+  }
+}
+
+.card.border-primary {
+  animation: pulse-border 2s infinite;
+}
+
+/* Add these to your styles.css file */
+
+/* Base message styles */
+.message {
+  max-width: 80%;
+  margin: 10px;
+  padding: 10px 15px;
+  border-radius: 10px;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+}
+
+/* User message styles */
+.user-message {
+  background-color: #e3f2fd;
+  color: #0d47a1;
+  margin-left: auto;
+  border-bottom-right-radius: 0;
+}
+
+/* System message styles */
+.system-message {
+  background-color: #fff8e1;
+  color: #bf360c;
+  margin: 10px auto;
+  max-width: 90%;
+  font-style: italic;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 0.9em;
+}
+
+/* Assistant message styles - these will be overridden by inline styles for colored chatbots */
+.assistant-message {
+  background-color: #f8f8f8;
+  color: #000000;
+  margin-right: auto;
+  border-bottom-left-radius: 0;
+}
+
+/* Chatbot indicator styles */
+#chatbot-indicator {
+  position: relative;
+  cursor: pointer;
+}
+
+/* Add a small notification dot when chatbot is changed */
+.chatbot-changed::after {
+  content: '';
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  width: 8px;
+  height: 8px;
+  background-color: #f44336;
+  border-radius: 50%;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.8);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(0.8);
+    opacity: 1;
+  }
+}
+
+/* Add a subtle border to highlight which chatbot is speaking */
+.message[data-chatbot-id]::before {
+  content: attr(data-chatbot-name);
+  display: block;
+  font-size: 0.75em;
+  opacity: 0.6;
+  margin-bottom: 5px;
+  font-style: italic;
+}
+
+/* Topic (Hashtag) Container Styles */
+.hashtags-container {
+  display: block;
+  margin: 10px 0;
+  padding: 10px;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+}
+
+.tags-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.hashtags-title {
+  font-weight: 500;
+  color: #444;
+  margin-right: 10px;
+}
+
+/* Individual hashtag styling */
+.tag-container {
+  display: inline-flex;
+  align-items: center;
+  background-color: #3b82f6;
+  border-radius: 16px;
+  padding: 3px 12px;
+  color: white;
+  font-size: 0.9em;
+}
+
+.hashtag {
+  cursor: pointer;
+}
+
+.hashtag.preliminary {
+  opacity: 0.7;
+}
+
+/* Delete button inside hashtag */
+.delete-tag-button {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  margin-left: 4px;
+}
+
+.delete-tag-button:hover {
+  color: white;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+}
+
+/* Add tag button (+ sign) */
+.add-tag-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  background-color: #3b82f6;
+  color: white;
+  border-radius: 50%;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 0;
+}
+
+.add-tag-button:hover {
+  background-color: #2563eb;
+}
+
+/* Modal for adding new tags */
+.tag-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.tag-modal {
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
+  width: 300px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.tag-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.tag-modal-title {
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+.tag-modal-close {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #666;
+}
+
+.tag-input {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 0.95em;
+  margin-bottom: 15px;
+}
+
+.tag-modal-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.tag-modal-button {
+  padding: 6px 12px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9em;
+}
+
+.tag-modal-cancel {
+  background-color: #f1f1f1;
+  color: #333;
+}
+
+.tag-modal-save {
+  background-color: #3b82f6;
+  color: white;
+}
+
+.no-tags-message {
+  color: #888;
+  font-style: italic;
+  font-size: 0.9em;
+  margin-left: 5px;
+}

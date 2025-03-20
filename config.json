@@ -1,0 +1,7 @@
+{
+  "ollamaApiUrl": "http://localhost:11434/api",
+  "defaultModel": "technobyte/Llama-3.3-70B-Abliterated:IQ2_XS",
+  "temperature": "0.7",
+  "maxTokens": "2000",
+  "contextMessages": 4
+}
